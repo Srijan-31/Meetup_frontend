@@ -23,6 +23,7 @@ export default function Details(){
                 <input type="text" placeholder='Search by title' onChange={(event)=>setTitle(event.target.value)} className='form-control w-auto'/>
             </div>
             <hr/>
+            <br/>
             <div className='row g-4'>
                 <div className='col-md-7 container '>
                     <h2><strong>{eventData?.title}</strong></h2>
