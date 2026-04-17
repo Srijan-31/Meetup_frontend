@@ -20,7 +20,7 @@ export default function Details(){
             <div className='d-flex justify-content-between align-items-center '>
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRubs8OoTGktOH5FyiIUnK_oSH0sSDr5hC0Sg&s" 
                 style={{ width: "100px", height: "100px" }} />
-                <input type="text" placeholder='Search by title' onChange={(event)=>setTitle(event.target.value)} className='form-control w-auto'/>
+                {/* <input type="text" placeholder='Search by title' onChange={(event)=>setTitle(event.target.value)} className='form-control w-auto'/> */}
             </div>
             <hr/>
             <br/>
@@ -30,7 +30,7 @@ export default function Details(){
                     <span>Hosted By:</span>
                     <p className='fw-bold fs-5'>{eventData?.hostedBy}</p>
                     <br/>
-                    <img src={eventData?.imageUrl} className='img-fluid'/>
+                    <img src={eventData?.imageUrl} className='img-fluid' style={{ width: "600px", height: "400px" }}/>
                     <br/>
                     <br/>
                     <p className='fs-4 fw-bold'>Details:</p>
@@ -52,23 +52,13 @@ export default function Details(){
                 <div className='col-md-1'></div>
                 <div className='col-md-4'>
                     <div className="card bg-white">
-                        <div className="card-body">
-                            <div className='row'>
-                                <div className='col-md-2 mt-2'>
-                                    <p><CiClock2 /></p>
-                                    <br/>
-                                    <p><GrLocation /></p>
-                                    <br/>
-                                    <p></p>
-                                </div>
-                                <div className='col-md-10'>
-                                    <p className='card-text'>{eventData?.dateTime.start} to {eventData?.dateTime.end} </p>
-                                    <span className='card-text'>{eventData?.location.venue}</span><br/>
-                                    <span className='card-text'>{eventData?.location.address}</span>
-                                    <p></p>
-                                    <p>₹ {eventData?.price}</p>
-                                </div>
-                            </div>
+                        <div className="card-body">  
+                            <span><CiClock2 /></span><span className='card-text'>{eventData?.dateTime.start} to {eventData?.dateTime.end} </span>
+                            <br/>
+                            <span className='card-text'><GrLocation />{eventData?.location.venue}</span><br/>
+                            <span className='card-text'>{eventData?.location.address}</span>
+                            <p></p>
+                            <p>₹ {eventData?.price}</p>
                         </div>
                     </div>
                     <br/>
