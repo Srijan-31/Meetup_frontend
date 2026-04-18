@@ -15,8 +15,8 @@ export default function App(){
   
   const filteredDataByType=eventType?data.filter(event=>event.eventType===eventType):data
   
-  const filterData=search?filteredDataByType.filter(event=>(event.title===search) || (
-    event.eventTags.find(tag=>tag===search.toLowerCase())
+  const filterData=search?filteredDataByType.filter(event=>(event.title.toLowerCase().includes(search.toLowerCase())) || (
+    event.eventTags.find(tag=>tag.toLowerCase().includes(search.toLowerCase()))
   )):filteredDataByType
   
 
