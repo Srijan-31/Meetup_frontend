@@ -2,6 +2,7 @@ import {useParams} from 'react-router-dom'
 import useFetch from '../useFetch'
 import { CiClock2 } from "react-icons/ci"
 import { GrLocation } from "react-icons/gr"
+import { BsCurrencyRupee } from "react-icons/bs"
 
 export default function Details(){
 
@@ -45,7 +46,7 @@ export default function Details(){
                     <br/>
                     {eventData?.eventTags.map(tag=>(
                         
-                            <span className='btn btn-danger me-3'>{tag}</span>
+                            <span className='btn btn-danger me-3 my-3'>{tag}</span>
                         
                     ))}
                 </div>
@@ -53,12 +54,20 @@ export default function Details(){
                 <div className='col-md-4'>
                     <div className="card bg-white">
                         <div className="card-body">  
-                            <span><CiClock2 /></span><span className='card-text'>{eventData?.dateTime.start} to {eventData?.dateTime.end} </span>
+                            <div className='d-flex gap-2'>
+                                <CiClock2 size={20} className='flex-shrink-0 mt-2' /><span className='card-text'>{eventData?.dateTime.start} to {eventData?.dateTime.end} </span>
+                            </div>
                             <br/>
-                            <span className='card-text'><GrLocation />{eventData?.location.venue}</span><br/>
-                            <span className='card-text'>{eventData?.location.address}</span>
-                            <p></p>
-                            <p>₹ {eventData?.price}</p>
+                            <div className='d-flex gap-2'>
+                               <GrLocation size={20} className='flex-shrink-0 mt-2'/><span className='card-text'>
+                                {eventData?.location.venue}<br/>
+                                {eventData?.location.address}
+                                </span>
+                            </div>
+                            <br/>
+                            <div className='d-flex gap-2'>
+                                <BsCurrencyRupee size={20} className='flex-shrink-0 '/><span className=' mb-2'>{eventData?.price}</span>
+                            </div>
                         </div>
                     </div>
                     <br/>
