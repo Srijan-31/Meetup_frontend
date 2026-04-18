@@ -76,7 +76,7 @@ export default function Details(){
                     <div className='row'>
                         {eventData?.speakers.map(speaker=>(
                                 <div className='col-md-6'>
-                                    <div className='card'>
+                                    <div className='card h-100'>
                                         <div className='card-body text-center'>
                                             <img src={speaker.photo}/><br/>
                                             <small className='fw-medium'>{speaker.name}</small><br/>
